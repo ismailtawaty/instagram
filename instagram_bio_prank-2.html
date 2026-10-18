@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#172b46">
+<title>رسالة مهمة جدًا</title>
+<style>
+:root{color-scheme:light dark;--cream:#f3eee5;--paper:#fffaf1;--brown:#8b6a50;--brown-dark:#49382d;--navy:#172b46;--blue:#2e4b70;--muted:#857b70;--line:#e3d8c9}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:Tahoma,Arial,sans-serif}
+body{background:light-dark(var(--cream),#101b2a);color:light-dark(var(--brown-dark),#f5eee4);display:grid;place-items:center;padding:22px}
+main{width:min(100%,520px);text-align:center;background:light-dark(var(--paper),#19283b);border:1px solid light-dark(var(--line),#33445a);border-radius:28px;padding:clamp(26px,7vw,48px) clamp(20px,6vw,38px);box-shadow:0 22px 65px #172b461a;position:relative;overflow:hidden}
+main:before{content:"";position:absolute;top:0;right:0;left:0;height:7px;background:linear-gradient(90deg,#172b46,#8b6a50,#d2b99f)}
+.mark{width:62px;height:62px;margin:0 auto 22px;border-radius:20px;background:light-dark(#e9dfd1,#263c56);display:grid;place-items:center;color:light-dark(var(--navy),#f3eee5);font-size:27px}
+.eyebrow{font-size:12px;letter-spacing:2px;color:light-dark(var(--muted),#c5b7a6);margin-bottom:14px}
+h1{font-size:clamp(25px,6vw,36px);line-height:1.65;margin:0 0 14px;color:light-dark(var(--navy),#f4eadc);font-weight:800}
+.message{font-size:clamp(19px,4.8vw,24px);line-height:2;margin:0 auto 28px;max-width:370px;color:light-dark(var(--brown-dark),#eee4d8)}
+.message strong{color:light-dark(var(--blue),#b8cde5)}
+button{font:inherit;font-size:15px;font-weight:700;border:0;border-radius:14px;padding:14px 22px;background:light-dark(var(--navy),#d8c2a8);color:light-dark(#fffaf1,#172b46);cursor:pointer;transition:transform .18s,filter .18s;width:100%;max-width:280px}
+button:hover{transform:translateY(-2px);filter:brightness(1.08)}
+button:focus-visible{outline:3px solid #8b6a50;outline-offset:4px}
+#extra{display:none;margin:22px auto 0;padding-top:20px;border-top:1px solid light-dark(var(--line),#33445a);line-height:1.9;color:light-dark(var(--muted),#c5b7a6);font-size:14px}
+footer{margin-top:28px;color:light-dark(#a29587,#aab6c6);font-size:11px}
+@media(prefers-reduced-motion:reduce){button{transition:none}}
+</style>
+</head>
+<body>
+<main aria-labelledby="headline">
+  <div class="mark" aria-hidden="true">✦</div>
+  <p class="message" id="message">إيه الفضى اللي إنت فيه ده؟<br><strong>روح شوف اللي وراك.</strong></p>
+  <button id="reveal" type="button">طب ماشي، هقوم أهو</button>
+</main>
+<script>
+const button = document.getElementById('reveal');
+const message = document.getElementById('message');
+button.addEventListener('click', () => {
+  message.textContent = 'يلا بسرعة';
+  button.remove();
+});
+</script>
+</body>
+</html>
